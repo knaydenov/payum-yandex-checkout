@@ -40,7 +40,7 @@ class CancelAction implements ActionInterface, GatewayAwareInterface
             $this->gateway->execute($cancelPayment = new CancelPayment($model['payment']['id'], $idempotenceKey));
             $model['payment'] = $cancelPayment->getPayment()->jsonSerialize();
         } else {
-            throw new  \RuntimeException('Payment must be in PENDING or AUTHORIZED state');
+            throw new  \RuntimeException('Payment must be PENDING or AUTHORIZED');
         }
     }
 
