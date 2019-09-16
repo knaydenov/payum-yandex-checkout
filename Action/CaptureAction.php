@@ -48,7 +48,7 @@ class CaptureAction implements ActionInterface, GatewayAwareInterface
             $this->gateway->execute($capturePayment = new CapturePayment($model['payment']['id'], $createCaptureRequest, $idempotenceKey));
             $model['payment'] = $capturePayment->getPayment()->jsonSerialize();
         } else {
-            throw new \RuntimeException('Payment must be in an AUTHORIZED state');
+            throw new \RuntimeException('Payment must be AUTHORIZED');
         }
     }
 

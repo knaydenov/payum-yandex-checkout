@@ -57,7 +57,7 @@ class RefundAction implements ActionInterface, GatewayAwareInterface, ApiAwareIn
             ]);
 
         } else {
-            throw new \RuntimeException('Payment must be in CAPTURED state');
+            throw new \RuntimeException('Payment must be CAPTURED');
         }
 
     }
